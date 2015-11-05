@@ -47,25 +47,17 @@ Use the expire command to make sure this key will expire in 10 seconds.
 
 When `/get` is visited, fetch that key, and send value back to the client: `res.send(value)` 
 
+![Gettter Setter image](/img/get:set.gif)
 
 ### Recent visited sites
 
-Create a new route, `/recent`, which will display the most recently visited sites.
+New route, `/recent`, which will display the most recently visited sites.
 
-There is already a global hook setup, which will allow you to see each site that is requested:
-
-	app.use(function(req, res, next) 
-	{
-	...
-
-Use the lpush, ltrim, and lrange redis commands to store the most recent 5 sites visited, and return that to the client.
+![Recent image](/img/recent.gif)
 
 ### Cat picture uploads: queue
 
-Implement two routes, `/upload`, and `/meow`.
- 
-A stub for upload and meow has already been provided.
-
+![Cat image](/img/meow.gif)
 Use curl to help you upload easily.
 
 	curl -F "image=@./img/morning.jpg" localhost:3000/upload
